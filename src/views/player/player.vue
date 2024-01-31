@@ -1,59 +1,36 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html class="no-js" lang="zxx">
+<template>
  <head>
-  <base href="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/">
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Zocker - eSports and Gaming HTML Template - Players</title>
+  <title>Esports - Players</title>
   <meta name="author" content="Vecuro" />
   <meta name="description" content="Zocker - eSports and Gaming HTML Template" />
   <meta name="keywords" content="Zocker - eSports and Gaming HTML Template" />
   <meta name="robots" content="INDEX,FOLLOW" />
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Montserrat:wght@700&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
-  <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png" />
-  <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-icon-76x76.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-icon-114x114.png" />
-  <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-icon-120x120.png" />
-  <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-icon-144x144.png" />
-  <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-icon-152x152.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicons/android-icon-192x192.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicons/favicon-96x96.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png" />
-  <link rel="manifest" href="assets/img/favicons/manifest.json" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png" />
   <meta name="theme-color" content="#ffffff" />
-  <link rel="stylesheet" href="assets/css/app.min.css" />
-  <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/theme-color1.css" />
  </head>
  <body>
-  <div class="preloader">
-   <button class="vs-btn preloaderCls">Cancel Preloader</button>
-   <div class="preloader-inner">
-    <div class="loader-logo">
-     <img src="/img/LoLlog.png" alt="Loader Image" />
-    </div>
-    <div class="loader-wrap pt-4">
-     <span class="loader"></span>
-    </div>
-   </div>
-  </div>
+<!--  <div class="preloader">-->
+<!--   <button class="vs-btn preloaderCls">Cancel Preloader</button>-->
+<!--   <div class="preloader-inner">-->
+<!--    <div class="loader-logo">-->
+<!--     <img src="@/assets/img/lolImg/LoLlog.png" alt="Loader Image" />-->
+<!--    </div>-->
+<!--    <div class="loader-wrap pt-4">-->
+<!--     <span class="loader"></span>-->
+<!--    </div>-->
+<!--   </div>-->
+<!--  </div>-->
   <div class="sticky-header-wrap sticky-header bg-light-dark py-1 py-sm-2 py-lg-1">
    <div class="container position-relative">
     <div class="row align-items-center">
      <div class="col-5 col-md-3">
       <div class="logo">
-       <a href="contestController/findContestItemByContestId"><img src="assets/img/logo-2.png" alt="Zocker" /></a>
+       <a href="contestController/findContestItemByContestId"><img src="@/assets/img/logo-2.png" alt="Zocker" /></a>
       </div>
      </div>
      <div class="col-7 col-md-9 text-end position-static">
@@ -94,7 +71,7 @@
          <ul class="sub-menu">
 
 
-         </ul></li>
+         </ul>
 
        </ul>
       </nav>
@@ -137,11 +114,11 @@
       </div>
      </div>
     </div>
-    <h3 class="sidebox-title text-white h5"><a href="cartController/findAll?uid=${sessionScope.user.uid}"><img src="/img/gwc.jpg" style="height: 60px" width="60px">Your shopping cart</a></h3>
+    <h3 class="sidebox-title text-white h5"><a href="cartController/findAll?uid=${sessionScope.user.uid}"><img src="@/assets/img/lolImg/gwc.jpg" style="height: 60px" width="60px">Your shopping cart</a></h3>
     <div class="post-thumb-style1">
      <div class="vs-blog d-flex gap-3">
       <div class="media-img">
-       <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-1.png" alt="Recent Post" /></a>
+       <a href="blog-details.jsp"><img src="@/assets/img/widget/recent-post-1-1.png" alt="Recent Post" /></a>
       </div>
       <div class="media-body align-self-center">
        <h4 class="h5 blog-title font-theme lh-base text-white mb-0"><a href="blog-details.jsp">The General Sery vice Administr</a></h4>
@@ -152,7 +129,7 @@
      </div>
      <div class="vs-blog d-flex gap-3">
       <div class="media-img">
-       <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-2.png" alt="Recent Post" /></a>
+       <a href="blog-details.jsp"><img src="@/assets/img/widget/recent-post-1-2.png" alt="Recent Post" /></a>
       </div>
       <div class="media-body align-self-center">
        <h4 class="h5 blog-title font-theme lh-base text-white mb-0"><a href="blog-details.jsp">Lorem ipsum is placeholder text commonly</a></h4>
@@ -163,7 +140,7 @@
      </div>
      <div class="vs-blog d-flex gap-3">
       <div class="media-img">
-       <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-3.png" alt="Recent Post" /></a>
+       <a href="blog-details.jsp"><img src="@/assets/img/widget/recent-post-1-3.png" alt="Recent Post" /></a>
       </div>
       <div class="media-body align-self-center">
        <h4 class="h5 blog-title font-theme lh-base text-white mb-0"><a href="blog-details.jsp">From its medieval origins to the digital</a></h4>
@@ -186,110 +163,13 @@
    <div class="vs-menu-area bg-dark">
     <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
     <div class="mobile-logo">
-     <a href="contestController/findContestItemByContestId"><img src="/img/LoLlog.png" alt="Zocker" /></a>
+     <a href="contestController/findContestItemByContestId"><img src="@/assets/img/lolImg/LoLlog.png" alt="Zocker" /></a>
     </div>
     <div class="vs-mobile-menu link-inherit"></div>
    </div>
   </div>
-  <header class="header-wrapper header-layout1 position-absolute top-0 start-0 w-100 z-index-step1">
-   <div class="header-top">
-    <div class="container">
-     <div class="row py-md-2">
-      <div class="col-sm-6 d-none d-md-block">
-       <p class="mb-0 fs-xs text-white">Welcome to our <a class="text-inherit" href="teamController/page"><u class="fw-bold">Esports team</u></a></p>
-      </div>
-      <div class="col-sm-6 text-end d-none d-md-block">
-       <ul class="social-links fs-xs text-white">
-        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitch"></i></a></li>
-        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-       </ul>
-      </div>
-     </div>
-    </div>
-   </div>
-   <div class="header-main" data-overlay="black" data-opacity="7">
-    <div class="container position-relative">
-     <div class="row align-items-center">
-      <div class="col-6 col-lg-4 d-block d-xl-none py-3 py-xl-0">
-       <div class="header-logo">
-        <a href="contestController/findContestItemByContestId"><img src="assets/img/logo-2.png" alt="Zocker" /></a>
-       </div>
-      </div>
-      <div class="col-6 col-lg-8 col-xl-5 text-end text-xl-start">
-       <nav class="main-menu menu-style1 mobile-menu-active" data-expand="992">
-        <ul>
-         <li class="menu-item-has-children"><a href="contestController/findContestItemByContestId">Home</a>
-          <ul class="sub-menu">
-           <li><a href="contestController/findContestItemByContestId">Home One</a></li>
-
-          </ul></li>
-
-         <li class="mega-menu-wrap menu-item-has-children"><a href="#">Pages</a>
-          <ul class="mega-menu">
-           <li><a href="goodController/findAll">Pagelist 1</a>
-            <ul>
-             <li><a href="contestController/findContestItemByContestId">Home One</a></li>
-
-            </ul></li>
-           <li><a href="#">Pagelist 2</a>
-            <ul>
-             <li><a href="merberController/page">Players</a></li>
-             <li><a href="teamController/page">Teams</a></li>
-            </ul></li>
-           <li><a href="#">Pagelist 3</a>
-            <ul>
-
-
-             <li><a href="goodController/findAll">Shop</a></li>
-
-            </ul></li>
-           <li><a href="#">Pagelist 4</a>
-            <ul>
-             <li><a href="contestController/findAll">Tournament</a></li>
-
-             <li><a href="error.jsp">Error 404 Page</a></li>
-            </ul></li>
-          </ul></li>
-
-          <ul class="sub-menu">
-
-
-          </ul></li>
-
-        </ul>
-       </nav>
-       <button type="button" class="vs-menu-toggle text-white d-inline-block d-lg-none"><i class="far fa-bars"></i></button>
-      </div>
-      <div class="col-md-4 col-lg-2 text-center d-none d-xl-block">
-       <div class="header-logo1">
-        <a href="contestController/findContestItemByContestId"><img src="/img/LoLlog.png" alt="Zocker" /></a>
-       </div>
-      </div>
-      <div class="col-md-4 col-lg-5 d-none d-xl-block">
-       <div class="header-right d-flex align-items-center justify-content-end">
-        <a href="#" class="vs-btn outline1 d-none d-xl-inline-block"><i class="fab fa-twitch"></i><strong>Live Streaming</strong></a>
-        <ul class="header-list1 list-style-none ml-30">
-         <li><button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/img/flag/flag-1.png" alt="Country Flag" class="flag radius-circle" /></button>
-          <ul class="dropdown-menu">
-           <li><a class="dropdown-item" href="#"><img src="assets/img/flag/french.png" alt="Flag" class="flag-small" /> French</a></li>
-           <li><a class="dropdown-item" href="#"><img src="assets/img/flag/germany.png" alt="Flag" class="flag-small" /> Germany</a></li>
-           <li><a class="dropdown-item" href="#"><img src="assets/img/flag/italy.png" alt="Flag" class="flag-small" /> Italy</a></li>
-           <li><a class="dropdown-item" href="#"><img src="assets/img/flag/bangladesh.png" alt="Flag" class="flag-small" /> Bangladesh</a></li>
-           <li><a class="dropdown-item" href="#"><img src="assets/img/flag/united-state.png" alt="Flag" class="flag-small" /> United State</a></li>
-          </ul></li>
-         <li><button class="searchBoxTggler"><i class="far fa-search"></i></button></li>
-         <li><button class="sideMenuToggler"><i class="fal fa-grip-horizontal fs-2"></i></button></li>
-        </ul>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </header>
-  <div class="breadcumb-wrapper breadcumb-layout1 pt-200 pb-50" data-bg-src="assets/img/breadcumb/breadcumb-1.jpg" data-overlay="">
+ <page-header></page-header>
+  <div class="breadcumb-wrapper breadcumb-layout1 pt-200 pb-50" data-bg-src="@/assets/img/breadcumb/breadcumb-1.jpg" data-overlay="">
    <div class="container z-index-common">
     <div class="breadcumb-content text-center">
      <h1 class="breadcumb-title h1 text-white my-0">Pro-Players</h1>
@@ -304,27 +184,25 @@
   <section class="vs-member-area vs-member-layout2 space-top newsletter-pb">
    <div class="container">
     <div class="row justify-content-center">
-     <c:forEach items="${page.list}" var="merber">
-     <div class="col-xl-3 col-lg-4 col-sm-6">
+     <div v-for="(merber,index) in list" class="col-xl-3 col-lg-4 col-sm-6">
       <div class="vs-member image-scale-hover">
        <div class="member-img">
-        <a href="merberController/findById?mid=${merber.mid}"><img src="${merber.merbaerimg}" class="w-100" alt="Member Image" /></a>
+         <a href="javaScript:void(0)" @click="showDetails(merber.mid)" ><img src="@/assets/img/lolImg/TheShy.png" class="w-100" alt="Member Image" /></a>
        </div>
        <div class="member-content">
         <div class="links-wrap text-start position-relative mb-30">
-         <span class="icon-btn3 style-white plus-icon"><i class="far fa-plus text-white"></i></span>
+          <span class="icon-btn3 style-white plus-icon"><span style="font-size: 20px;color: #0b0b0b">{{merber.mname}}</span></span>
          <div class="member-links">
-          <a href="javaScript:void(0)" class="icon-btn3"><i class="fab">K:${merber.merberkill}</i></a>
-          <a href="javaScript:void(0)" class="icon-btn3"><i class="fab">D:${merber.merberdie}</i></a>
-          <a href="javaScript:void(0)" class="icon-btn3"><i class="fab">A:${merber.merberassist}</i></a>
+          <a href="javaScript:void(0)" class="icon-btn3"><i class="fab">K:{{merber.merberkill}}</i></a>
+          <a href="javaScript:void(0)" class="icon-btn3"><i class="fab">D:{{merber.merberdie}}</i></a>
+          <a href="javaScript:void(0)" class="icon-btn3"><i class="fab">A:{{merber.merberassist}}</i></a>
          </div>
         </div>
-        <h3 class="member-name h5 mb-0 text-white"><a href="merberController/findById?mid=${merber.mid}">${merber.name}</a></h3>
-        <span class="degi text-white">${merber.type}</span>
+        <h3 class="member-name h5 mb-0 text-white"><a href="javaScript:void(0)" @click="showDetails(merber.mid)">{{merber.name}}</a></h3>
+        <span class="degi text-white">{{merber.msportid}}</span>
        </div>
       </div>
      </div>
-     </c:forEach>
      <input type='hidden' id='prepageNo' value='${page.prePage}'>
      <input type='hidden' id='nextPage' value='${page.nextPage}'>
      <input type='hidden' id='pageNum' value='${page.pageNum}'>
@@ -360,105 +238,103 @@
     </div>
    </div>
   </section>
-  <footer class="footer-wrapper footer-layout1 bg-fluid bg-major-black position-relative">
-   <div class="bg-fluid d-none d-none d-xl-block position-absolute start-0 top-0 w-100 h-100" data-bg-src="assets/img/bg/footer-bg-1-1.jpg"></div>
-   <div class="footer-widget-wrapper dark-style1 z-index-common">
-    <div class="container">
-     <div class="row justify-content-between">
-      <div class="col-md-6 col-lg-3 col-xl-4">
-       <div class="widget footer-widget pt-0">
-        <h3 class="widget_title">About Us</h3>
-        <div class="vs-widget-about">
-         <p class="about-text text-footer1 pe-xl-5">The League of Legends offseason is in full effect and teams are looking to sign new players to strengthen their roster or to re-sign their current players.</p>
-         <div class="d-flex gap-2 text-white mt-45">
-          <a class="icon-btn1 skew-right" href="#"><i class="fab fa-facebook-f"></i></a> 
-          <a class="icon-btn1 skew-right" href="#"><i class="fab fa-twitter"></i></a> 
-          <a class="icon-btn1 skew-right" href="#"><i class="fab fa-linkedin-in"></i></a> 
-          <a class="icon-btn1 skew-right" href="#"><i class="fab fa-youtube"></i></a>
-         </div>
-        </div>
-       </div>
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2">
-       <div class="widget widget_categories footer-widget">
-        <h3 class="widget_title">Categories</h3>
-        <ul>
-         <li><a href="#">Ancient</a></li>
-         <li><a href="#">Fantasy</a></li>
-         <li><a href="#">Horror</a></li>
-         <li><a href="#">Shooting</a></li>
-         <li><a href="#">MS-XBOX</a></li>
-        </ul>
-       </div>
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2">
-       <div class="widget widget_nav_menu footer-widget">
-        <h3 class="widget_title">NEED HELP?</h3>
-        <div class="menu-all-pages-container">
-         <ul class="menu">
-          <li><a href="#">Company</a></li>
-          <li><a href="#">For the fans</a></li>
-          <li><a href="#">Press</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Policy</a></li>
-         </ul>
-        </div>
-       </div>
-      </div>
-      <div class="col-md-6 col-lg-3 col-xl-3">
-       <div class="widget footer-widget">
-        <h3 class="widget_title">Contact Us</h3>
-        <div class="vs-widget-about">
-         <p class="contact-info"><i class="fal fa-map-marker-alt text-white"></i>121 King St, Melbourne VIC 3000, Australia</p>
-         <p class="contact-info"><i class="fal fa-phone text-white"></i><a href="tel:+65965252561">(888)-659-252561</a></p>
-         <p class="contact-info"><i class="fal fa-fax text-white"></i><a href="tel:+65965252561">(888)-123-45678</a></p>
-         <p class="contact-info"><i class="fal fa-envelope text-white"></i><a href="mailto:zocker@webmail.com">zocker@email.com</a></p>
-         <p class="contact-info"><i class="fal fa-globe text-white"></i><a href="#">www.zockerexample.com</a></p>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-   <div class="footer-copyright bg-black z-index-step1">
-    <div class="container">
-     <div class="row">
-      <div class="col-xl-8 d-none d-xl-block">
-       <div class="footer-menu">
-        <ul>
-         <li><a href="#">Features</a></li>
-         <li><a href="#">Request</a></li>
-         <li><a href="#">Imprint</a></li>
-         <li><a href="#">Privacy</a></li>
-         <li><a href="#">Policy</a></li>
-         <li><a href="#">Cookie</a></li>
-         <li><a href="#">Content</a></li>
-        </ul>
-       </div>
-      </div>
-      <div class="col-xl-4 align-self-center text-center py-3 py-xl-0 text-xl-end">
-       <p class="text-light fw-bold text-bold mb-0">Copyright &copy; 2021.Company name All rights reserved.</p>
-      </div>
-     </div>
-    </div>
-   </div>
-  </footer>
+<page-footer></page-footer>
   <a href="#" class="scrollToTop icon-btn3"><i class="far fa-angle-up"></i></a>
   <div class="vs-cursor"></div>
   <div class="vs-cursor2"></div>
-  <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-  <script src="assets/js/app.min.js"></script>
-  <script src="assets/js/vscustom-carousel.min.js"></script>
-  <script src="assets/js/vs-cursor.min.js"></script>
-  <script src="assets/js/vsmenu.min.js"></script>
-  <script src="https://ditu.google.cn/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>
-  <script src="assets/js/map.js"></script>
-  <script src="assets/js/ajax-mail.js"></script>
-  <script src="assets/js/main.js"></script>
  </body>
-</html>
+</template>
 <script>
- function  find2(pageNo){
-  window.location.href="merberController/page?pageNo="+pageNo;
- }
+import pageFooter from "@/components/PageFooter.vue";
+import pageHeader from "@/components/PageHeader.vue"
+import {getPlayers,getPlayerDetails} from "@/js/api/team/player";
+// import requestTeam from "@/js/utils/requestTeam";
+export  default {
+
+  data() {
+    return {
+      list: "",//搜索结果数据
+      pageSize:8, //每页个数，后台默认4
+      pageNo: 1,//当前页码，不传默认第一页
+      pageAll: "", //数据总页数
+      jumpPage: "",//跳转页码
+    }
+  },
+  created() {
+    this.loadTeams();
+  },
+  methods:{
+    loadTeams(){
+      getPlayers(this.pageNo,this.pageSize)
+          .then((resp)=>{
+            this.list=resp.data.data;
+            this.pageSize=resp.data.pageSize;
+            this.pageNo=resp.data.pageNo;
+            this.pageAll=resp.data.pageAll;
+            console.log(this.pageNo)
+            //console.log(resp.data.data)
+          })
+    },
+    pageClick(){
+      this.loadTeams(); //获取列表数据
+      window.scrollTo(0,500); //页面滚动到顶部
+    },
+    //点击页码或跳转指定页码
+    goPage(event){
+      if(event != this.pageNo && event != ""){
+        this.pageNo = event
+        this.loadTeams(); //获取列表数据
+        window.scrollTo(0,500); //页面滚动到顶部
+      }
+    },
+    showDetails(mid){
+      this.$router.push({path:'/playerDetails',query: {mid: mid}})
+    }
+  },
+  computed: {
+    pagesAll() {
+      // 开始数字
+      var leftNum = 1;
+      // 结束数字
+      var rightNum = this.pageAll;
+      // 存储页码数组
+      var pageArray = [];
+      // 显示页码的数量 最好是个单数
+      var showNum = 5;
+      // 因为是单数向上取整获取到中间的数字
+      var centerNum = Math.ceil(showNum / 2);
+      // 判断分析当总页数超过showNum展示页数时，需要判断分页情况
+      //1、在最左边第一个或者在centerNum的前面
+      //2、在中间
+      //3、最右边最后一个
+      if (this.pageAll >= showNum) {
+        // 中间centerNum时左右都加上（centerNum-1)
+        if (this.pageNo > centerNum && this.pageNo < this.pageAll - (centerNum - 1)) {
+          //一定要用Number格式化一下获取的数据,防止获取的是字符串而不是数字
+          leftNum = Number(this.pageNo) - (centerNum - 1)
+          rightNum = Number(this.pageNo) + (centerNum - 1)
+        } else {
+          //最左边或者在showNum的中间
+          if (this.pageNo <= centerNum) {
+            leftNum = 1
+            rightNum = showNum
+            // 最右边时结束是总条数，开始是showNum减去1
+          } else {
+            rightNum = this.pageAll
+            leftNum = this.pageAll - (showNum - 1)
+          }
+        }
+      }
+      while (leftNum <= rightNum) {
+        pageArray.push(leftNum)
+        leftNum++
+      }
+      return pageArray
+    }
+  },
+  components: {
+    pageHeader,
+    pageFooter,
+  }
+}
 </script>

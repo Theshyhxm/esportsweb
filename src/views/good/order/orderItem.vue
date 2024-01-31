@@ -1,6 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
  <head>
@@ -42,7 +39,7 @@
    <button class="vs-btn preloaderCls">Cancel Preloader</button>
    <div class="preloader-inner">
     <div class="loader-logo">
-     <img src="/img/LoLlog.png" alt="Loader Image" />
+     <img src="@/assets/img/LoLlog.png" alt="Loader Image" />
     </div>
     <div class="loader-wrap pt-4">
      <span class="loader"></span>
@@ -138,7 +135,7 @@
       </div>
      </div>
     </div>
-    <h3 class="sidebox-title text-white h5"><a href="cartController/findAll?uid=${sessionScope.user.uid}"><img src="/img/gwc.jpg" style="height: 60px" width="60px">Your shopping cart</a></h3>
+    <h3 class="sidebox-title text-white h5"><a href="cartController/findAll?uid=${sessionScope.user.uid}"><img src="@/assets/img/gwc.jpg" style="height: 60px" width="60px">Your shopping cart</a></h3>
     <div class="post-thumb-style1">
      <div class="vs-blog d-flex gap-3">
       <div class="media-img">
@@ -187,7 +184,7 @@
    <div class="vs-menu-area bg-dark">
     <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
     <div class="mobile-logo">
-     <a href="contestController/findContestItemByContestId"><img src="/img/LoLlog.png" alt="Zocker" /></a>
+     <a href="contestController/findContestItemByContestId"><img src="@/assets/img/LoLlog.png" alt="Zocker" /></a>
     </div>
     <div class="vs-mobile-menu link-inherit"></div>
    </div>
@@ -266,7 +263,7 @@
       </div>
       <div class="col-md-4 col-lg-2 text-center d-none d-xl-block">
        <div class="header-logo1">
-        <a href="contestController/findContestItemByContestId"><img src="/img/LoLlog.png" alt="Zocker" /></a>
+        <a href="contestController/findContestItemByContestId"><img src="@/assets/img/LoLlog.png" alt="Zocker" /></a>
        </div>
       </div>
       <div class="col-md-4 col-lg-5 d-none d-xl-block">

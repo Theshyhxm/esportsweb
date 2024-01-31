@@ -165,53 +165,53 @@
 
   /*----------- 09. Magnific Popup ----------*/
   /* magnificPopup img view */
-  $('.popup-image').magnificPopup({
-    type: 'image',
-    gallery: {
-      enabled: true
-    }
-  });
-
-  /* magnificPopup video view */
-  $('.popup-video').magnificPopup({
-    type: 'iframe'
-  });
-
-
+  // $('.popup-image').magnificPopup({
+  //   type: 'image',
+  //   gallery: {
+  //     enabled: true
+  //   }
+  // });
+  //
+  // /* magnificPopup video view */
+  // $('.popup-video').magnificPopup({
+  //   type: 'iframe'
+  // });
 
 
-  /*----------- 10. Filter Menu ----------*/
-  $('.filter-active').imagesLoaded(function () {
-    var $filter = '.filter-active',
-      $filterItem = '.grid-item',
-      $filterMenu = '.filter-menu-active';
 
-    if ($($filterMenu).length > 0) {
-      var $grid = $($filter).isotope({
-        itemSelector: $filterItem,
-        filter: '*',
-        masonry: {
-          // use outer width of grid-sizer for columnWidth
-          columnWidth: $filterItem
-        }
-      });
-  
-      // filter items on button click
-      $($filterMenu).on('click', 'button', function () {
-        var filterValue = $(this).attr('data-filter');
-        $grid.isotope({
-          filter: filterValue
-        });
-      });
-  
-      // Menu Active Class 
-      $($filterMenu).on('click', 'button', function (event) {
-        event.preventDefault();
-        $(this).addClass('active');
-        $(this).siblings('.active').removeClass('active');
-      });
-    };
-  });
+  //
+  // /*----------- 10. Filter Menu ----------*/
+  // $('.filter-active').imagesLoaded(function () {
+  //   var $filter = '.filter-active',
+  //     $filterItem = '.grid-item',
+  //     $filterMenu = '.filter-menu-active';
+  //
+  //   if ($($filterMenu).length > 0) {
+  //     var $grid = $($filter).isotope({
+  //       itemSelector: $filterItem,
+  //       filter: '*',
+  //       masonry: {
+  //         // use outer width of grid-sizer for columnWidth
+  //         columnWidth: $filterItem
+  //       }
+  //     });
+  //
+  //     // filter items on button click
+  //     $($filterMenu).on('click', 'button', function () {
+  //       var filterValue = $(this).attr('data-filter');
+  //       $grid.isotope({
+  //         filter: filterValue
+  //       });
+  //     });
+  //
+  //     // Menu Active Class
+  //     $($filterMenu).on('click', 'button', function (event) {
+  //       event.preventDefault();
+  //       $(this).addClass('active');
+  //       $(this).siblings('.active').removeClass('active');
+  //     });
+  //   };
+  // });
 
 
 

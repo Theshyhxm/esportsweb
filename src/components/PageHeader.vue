@@ -26,7 +26,7 @@
           <div class="row align-items-center">
             <div class="col-6 col-lg-4 d-block d-xl-none py-3 py-xl-0">
               <div class="header-logo">
-                <a href="contestController/findContestItemByContestId"><img src="@/assets/img/lolImg/LoLlog.png"
+                <a href="contestController/findContestItemByContestId"><img src="../assets/img/lolImg/LoLlog.png"
                                                                             alt="League of Legends"/></a>
               </div>
             </div>
@@ -52,8 +52,8 @@
                       </li>
                       <li><a href="#">Pagelist 2</a>
                         <ul>
-                          <li><a href="merberController/page">Players</a></li>
-                          <li><a href="teamController/page">Teams</a></li>
+                          <li><a href="javaScript:void(0)" @click="goPlayer">Players</a></li>
+                          <li><a href="javaScript:void(0)" @click = "goTeam()">Teams</a></li>
                         </ul>
                       </li>
                       <li><a href="#">Pagelist 3</a>
@@ -87,7 +87,7 @@
             </div>
             <div class="col-md-4 col-lg-2 text-center d-none d-xl-block">
               <div class="header-logo1">
-                <a href="contestController/findContestItemByContestId"><img src="@/assets/img/lolImg/LoLlog.png"
+                <a href="contestController/findContestItemByContestId"><img src="../assets/img/lolImg/LoLlog.png"
                                                                             alt="League of Legends"/></a>
               </div>
             </div>
@@ -98,24 +98,24 @@
                 <ul class="header-list1 list-style-none ml-30">
                   <li>
                     <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false"><img src="@/assets/img/flag/flag-1.png"
+                            aria-expanded="false"><img src="../assets/img/flag/flag-1.png"
                                                        alt="Country Flag" class="flag radius-circle"/>
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#"><img src="@/assets/img/flag/french.png"
+                      <li><a class="dropdown-item" href="#"><img src="../assets/img/flag/french.png"
                                                                  alt="Flag" class="flag-small"/>
                         French</a></li>
-                      <li><a class="dropdown-item" href="#"><img src="@/assets/img/flag/germany.png"
+                      <li><a class="dropdown-item" href="#"><img src="../assets/img/flag/germany.png"
                                                                  alt="Flag" class="flag-small"/>
                         Germany</a></li>
-                      <li><a class="dropdown-item" href="#"><img src="@/assets/img/flag/italy.png"
+                      <li><a class="dropdown-item" href="#"><img src="../assets/img/flag/italy.png"
                                                                  alt="Flag" class="flag-small"/> Italy</a>
                       </li>
-                      <li><a class="dropdown-item" href="#"><img src="@/assets/img/flag/bangladesh.png"
+                      <li><a class="dropdown-item" href="#"><img src="../assets/img/flag/bangladesh.png"
                                                                  alt="Flag" class="flag-small"/>
                         Bangladesh</a></li>
                       <li><a class="dropdown-item" href="#"><img
-                          src="@/assets/img/flag/united-state.png" alt="Flag" class="flag-small"/>
+                          src="../assets/img/flag/united-state.png" alt="Flag" class="flag-small"/>
                         United State</a></li>
                     </ul>
                   </li>
@@ -135,6 +135,17 @@
   </header>
 </template>
 <script>
-
+export default{
+  methods:{
+    goTeam (){
+      //  路径/home对应我在router目录下index.js中定义的path属性值
+      this.$router.push('/team');
+    },
+    goPlayer (){
+      //  路径/home对应我在router目录下index.js中定义的path属性值
+      this.$router.push('/player');
+    },
+  }
+}
 </script>
 

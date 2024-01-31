@@ -1,9 +1,36 @@
 // all needed ids and classes:
-const slider = document.getElementById('slider'), container = document.getElementById('container'), right = document.getElementById('right'), login = document.getElementById('login'), recover = document.getElementById('recover'), forgotPassButton = document.getElementById('forgot-pass'), BackToLoginButton = document.getElementById('back-to-login'), newAccountButton = document.getElementById('new-account'), signupSlideButton = document.getElementById('signup-slide-button'), loginSlideButton = document.getElementById('login-slide-button'), 
+const slider = document.getElementById('slider'), container = document.getElementById('container'),
+    right = document.getElementById('right'), login = document.getElementById('login'),
+    recover = document.getElementById('recover'), forgotPassButton = document.getElementById('forgot-pass'),
+    BackToLoginButton = document.getElementById('back-to-login'),
+    newAccountButton = document.getElementById('new-account'),
+    signupSlideButton = document.getElementById('signup-slide-button'),
+    loginSlideButton = document.getElementById('login-slide-button'),
 // I used some Id's below since I do not need all the elements without server side application
-user = document.getElementById('user'), password = document.getElementById('password'), passwordConfirmation = document.getElementById('confirm-password'), userLabel = document.getElementById('user-label'), passwordLabel = document.getElementById('password-label'), passwordConfirmationLabel = document.getElementById('confirm-password-label'), passwordRequirementsContainer = document.getElementById('password-requirements-container'), passwordRequirements = document.getElementById('password-requirements'), passwordRequirementsLength = document.getElementById('password-requirements-length'), passwordRequirementsNumber = document.getElementById('password-requirements-number'), passwordRequirementsLower = document.getElementById('password-requirements-lower'), passwordRequirementsUpper = document.getElementById('password-requirements-upper'), passwordRequirementsSpecial = document.getElementById('password-requirements-special'), forms = document.querySelectorAll('form'), inputs = document.querySelectorAll('.input'), passwordInputs = document.querySelectorAll('input[type="password"]'), validationIcons = document.querySelectorAll('.validation-icon'), labelWrappers = document.querySelectorAll('.label-wrapper'), labels = document.querySelectorAll('.label'), passwordEyes = document.querySelectorAll('.password-eye'), checkboxes = document.querySelectorAll('input[type="checkbox"]'), checkmarks = document.querySelectorAll('.checkmark'), checkmarkLabels = document.querySelectorAll('.checkmark-label'), radios = document.querySelectorAll('input[type="radio"]'), radioButtons = document.querySelectorAll('.radio'), radioButtonLabels = document.querySelectorAll('.radio-label');
+    user = document.getElementById('user'), password = document.getElementById('password'),
+    passwordConfirmation = document.getElementById('confirm-password'),
+    userLabel = document.getElementById('user-label'), passwordLabel = document.getElementById('password-label'),
+    passwordConfirmationLabel = document.getElementById('confirm-password-label'),
+    passwordRequirementsContainer = document.getElementById('password-requirements-container'),
+    passwordRequirements = document.getElementById('password-requirements'),
+    passwordRequirementsLength = document.getElementById('password-requirements-length'),
+    passwordRequirementsNumber = document.getElementById('password-requirements-number'),
+    passwordRequirementsLower = document.getElementById('password-requirements-lower'),
+    passwordRequirementsUpper = document.getElementById('password-requirements-upper'),
+    passwordRequirementsSpecial = document.getElementById('password-requirements-special'),
+    forms = document.querySelectorAll('form'), inputs = document.querySelectorAll('.input'),
+    passwordInputs = document.querySelectorAll('input[type="password"]'),
+    validationIcons = document.querySelectorAll('.validation-icon'),
+    labelWrappers = document.querySelectorAll('.label-wrapper'), labels = document.querySelectorAll('.label'),
+    passwordEyes = document.querySelectorAll('.password-eye'),
+    checkboxes = document.querySelectorAll('input[type="checkbox"]'),
+    checkmarks = document.querySelectorAll('.checkmark'),
+    checkmarkLabels = document.querySelectorAll('.checkmark-label'),
+    radios = document.querySelectorAll('input[type="radio"]'), radioButtons = document.querySelectorAll('.radio'),
+    radioButtonLabels = document.querySelectorAll('.radio-label');
 // input validation regular expressions
-const validMail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/, validPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z\d\s]).{8,32}$/;
+const validMail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/,
+    validPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z\d\s]).{8,32}$/;
 // login/signup slide function
 const sliding = () => {
     signupSlideButton.onclick = () => {
@@ -57,8 +84,7 @@ const validationStyling = (type, input, label, iconIndex) => {
         validationIcons[iconIndex].classList.add('active');
         if (eyeIndex)
             passwordEyes[eyeIndex].classList.add('valid');
-    }
-    else if (type == 'invalid') {
+    } else if (type == 'invalid') {
         input.classList.remove('valid');
         input.classList.add('invalid');
         label.classList.remove('valid');
@@ -69,8 +95,7 @@ const validationStyling = (type, input, label, iconIndex) => {
         validationIcons[iconIndex + 1].classList.add('active');
         if (eyeIndex)
             passwordEyes[eyeIndex].classList.add('invalid');
-    }
-    else if (type == 'empty' || type == 'focused') {
+    } else if (type == 'empty' || type == 'focused') {
         input.classList.remove('valid');
         input.classList.remove('invalid');
         label.classList.remove('valid');
@@ -191,8 +216,7 @@ const passwordVisibility = () => {
                 passwordEyes[i].classList.remove('visible');
                 passwordEyes[i].lastElementChild.attributes["data-tooltip"].value = 'show password';
                 passwordInputs[i].type = 'password';
-            }
-            else {
+            } else {
                 passwordEyes[i].classList.add('visible');
                 passwordEyes[i].lastElementChild.attributes["data-tooltip"].value = 'hide password';
                 passwordInputs[i].type = 'text';
@@ -206,8 +230,7 @@ const check = () => {
         checkmarkLabels[i].onclick = () => {
             if (checkboxes[i].checked == false) {
                 checkboxes[i].checked = true;
-            }
-            else {
+            } else {
                 checkboxes[i].checked = false;
             }
         };
@@ -227,8 +250,7 @@ const inputValidation = () => {
                 validationStyling('valid', user, userLabel, 3); // use the email and phone number regular expression to verify input
             else
                 validationStyling('invalid', user, userLabel, 3);
-        }
-        else
+        } else
             validationStyling('empty', user, userLabel, 3);
     }; // disclaimer: phone number shouldn't be verified on client side, if you would like to actually verify a phone a number I recommend checking https://github.com/google/libphonenumber
     password.onchange = () => {
@@ -237,8 +259,7 @@ const inputValidation = () => {
                 validationStyling('valid', password, passwordLabel, 4);
             else
                 validationStyling('invalid', password, passwordLabel, 4);
-        }
-        else
+        } else
             validationStyling('empty', password, passwordLabel, 4);
     };
     passwordConfirmation.onchange = () => {
@@ -247,8 +268,7 @@ const inputValidation = () => {
                 validationStyling('valid', passwordConfirmation, passwordConfirmationLabel, 5);
             else
                 validationStyling('invalid', passwordConfirmation, passwordConfirmationLabel, 5);
-        }
-        else
+        } else
             validationStyling('empty', passwordConfirmation, passwordConfirmationLabel, 5);
     };
     password.oninput = () => {
@@ -326,7 +346,8 @@ window.onresize = () => {
 };
 // all what's below is for extra themes and will not be documented
 const extraThemes = () => {
-    const openThemesButton = document.getElementById('open-themes'), themes = document.getElementById('themes'), themeLabels = document.querySelectorAll('.theme-label'), form = document.getElementById('custom-theme-form');
+    const openThemesButton = document.getElementById('open-themes'), themes = document.getElementById('themes'),
+        themeLabels = document.querySelectorAll('.theme-label'), form = document.getElementById('custom-theme-form');
     const buttonFunctions = () => {
         openThemesButton.onclick = () => {
             themes.classList.add('active');
@@ -406,8 +427,7 @@ const extraThemes = () => {
                             body.setAttribute('style', pair[0] + ':url(' + pair[1] + ');' + body.getAttribute('style'));
                     };
                 }
-            }
-            else
+            } else
                 customTheme += pair[0] + ':' + pair[1] + ';';
             if (pair[0] == '--body-color') {
                 customTheme += '--body-color-gradient:' + pair[1] + 'ec;';

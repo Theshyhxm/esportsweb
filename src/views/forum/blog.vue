@@ -1,5 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
  <head>
@@ -41,7 +39,7 @@
    <button class="vs-btn preloaderCls">Cancel Preloader</button>
    <div class="preloader-inner">
     <div class="loader-logo">
-     <img src="/img/LoLlog.png" alt="Loader Image" />
+     <img src="@/assets/img/LoLlog.png" alt="Loader Image" />
     </div>
     <div class="loader-wrap pt-4">
      <span class="loader"></span>
@@ -137,14 +135,14 @@
       </div>
      </div>
     </div>
-    <h3 class="sidebox-title text-white h5"><a href="cartController/findAll?uid=${sessionScope.user.uid}"><img src="/img/gwc.jpg" style="height: 60px" width="60px">Your shopping cart</a></h3>
+    <h3 class="sidebox-title text-white h5"><a href="cartController/findAll?uid=${sessionScope.user.uid}"><img src="@/assets/img/gwc.jpg" style="height: 60px" width="60px">Your shopping cart</a></h3>
     <div class="post-thumb-style1">
      <div class="vs-blog d-flex gap-3">
       <div class="media-img">
-       <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-1.png" alt="Recent Post" /></a>
+       <a href="blog-details.vue"><img src="assets/img/widget/recent-post-1-1.png" alt="Recent Post" /></a>
       </div>
       <div class="media-body align-self-center">
-       <h4 class="h5 blog-title font-theme lh-base text-white mb-0"><a href="blog-details.jsp">The General Sery vice Administr</a></h4>
+       <h4 class="h5 blog-title font-theme lh-base text-white mb-0"><a href="blog-details.vue">The General Sery vice Administr</a></h4>
        <div class="blog-meta text-light fs-xs mt-1">
         <a href="blog.jsp"><i class="fal fa-calendar-alt"></i>June 21, 2021</a>
        </div>
@@ -152,10 +150,10 @@
      </div>
      <div class="vs-blog d-flex gap-3">
       <div class="media-img">
-       <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-2.png" alt="Recent Post" /></a>
+       <a href="blog-details.vue"><img src="assets/img/widget/recent-post-1-2.png" alt="Recent Post" /></a>
       </div>
       <div class="media-body align-self-center">
-       <h4 class="h5 blog-title font-theme lh-base text-white mb-0"><a href="blog-details.jsp">Lorem ipsum is placeholder text commonly</a></h4>
+       <h4 class="h5 blog-title font-theme lh-base text-white mb-0"><a href="blog-details.vue">Lorem ipsum is placeholder text commonly</a></h4>
        <div class="blog-meta text-light fs-xs mt-1">
         <a href="blog.jsp"><i class="fal fa-calendar-alt"></i>June 21, 2021</a>
        </div>
@@ -163,10 +161,10 @@
      </div>
      <div class="vs-blog d-flex gap-3">
       <div class="media-img">
-       <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-3.png" alt="Recent Post" /></a>
+       <a href="blog-details.vue"><img src="assets/img/widget/recent-post-1-3.png" alt="Recent Post" /></a>
       </div>
       <div class="media-body align-self-center">
-       <h4 class="h5 blog-title font-theme lh-base text-white mb-0"><a href="blog-details.jsp">From its medieval origins to the digital</a></h4>
+       <h4 class="h5 blog-title font-theme lh-base text-white mb-0"><a href="blog-details.vue">From its medieval origins to the digital</a></h4>
        <div class="blog-meta text-light fs-xs mt-1">
         <a href="blog.jsp"><i class="fal fa-calendar-alt"></i>June 21, 2021</a>
        </div>
@@ -186,7 +184,7 @@
    <div class="vs-menu-area bg-dark">
     <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
     <div class="mobile-logo">
-     <a href="contestController/findContestItemByContestId"><img src="/img/LoLlog.png" alt="Zocker" /></a>
+     <a href="contestController/findContestItemByContestId"><img src="@/assets/img/LoLlog.png" alt="Zocker" /></a>
     </div>
     <div class="vs-mobile-menu link-inherit"></div>
    </div>
@@ -265,7 +263,7 @@
       </div>
       <div class="col-md-4 col-lg-2 text-center d-none d-xl-block">
        <div class="header-logo1">
-        <a href="contestController/findContestItemByContestId"><img src="/img/LoLlog.png" alt="Zocker" /></a>
+        <a href="contestController/findContestItemByContestId"><img src="@/assets/img/LoLlog.png" alt="Zocker" /></a>
        </div>
       </div>
       <div class="col-md-4 col-lg-5 d-none d-xl-block">
@@ -307,7 +305,7 @@
      <div class="col-lg-8">
       <div class="vs-blog">
        <div class="blog-image image-scale-hover">
-        <a href="blog-details.jsp"><img src="assets/img/blog/blog-d-1-1.jpg" class="w-100" alt="Blog Image" /></a>
+        <a href="blog-details.vue"><img src="assets/img/blog/blog-d-1-1.jpg" class="w-100" alt="Blog Image" /></a>
        </div>
        <div class="blog-meta bg-smoke has-border">
         <a href="#"><i class="fal fa-calendar-alt"></i>June 20, 2021</a> 
@@ -320,7 +318,7 @@
         </div>
        </div>
        <div class="blog-content bg-smoke">
-        <h2 class="blog-title h4 font-theme"><a href="blog-details.jsp">Progressively visualize intellectual capital rather</a></h2>
+        <h2 class="blog-title h4 font-theme"><a href="blog-details.vue">Progressively visualize intellectual capital rather</a></h2>
         <p>Distinctively impact standards compliant supply chains for installed base core competencies. Continually incubate top-line e-business and value-added ideas. Professionally empower progressive processes without cooperative methods of empowerment.</p>
         <div class="author-box d-flex">
          <img src="assets/img/author/author-1.jpg" alt="Author Image" />
@@ -333,8 +331,8 @@
       </div>
       <div class="vs-blog">
        <div class="blog-image arrow-white vs-carousel" data-slide-show="1" data-arrows="true" data-prev-arrow="far fa-chevron-left" data-next-arrow="far fa-chevron-right">
-        <a href="blog-details.jsp"><img src="assets/img/blog/blog-d-1-2.jpg" class="w-100" alt="Blog Image" /></a>
-        <a href="blog-details.jsp"><img src="assets/img/blog/blog-d-1-3.jpg" class="w-100" alt="Blog Image" /></a>
+        <a href="blog-details.vue"><img src="assets/img/blog/blog-d-1-2.jpg" class="w-100" alt="Blog Image" /></a>
+        <a href="blog-details.vue"><img src="assets/img/blog/blog-d-1-3.jpg" class="w-100" alt="Blog Image" /></a>
        </div>
        <div class="blog-meta bg-smoke has-border">
         <a href="#"><i class="fal fa-calendar-alt"></i>Augest 20, 2021</a> 
@@ -347,7 +345,7 @@
         </div>
        </div>
        <div class="blog-content bg-smoke">
-        <h2 class="blog-title h4 font-theme"><a href="blog-details.jsp">Lorem ipsum is placeholder text commonly graphic</a></h2>
+        <h2 class="blog-title h4 font-theme"><a href="blog-details.vue">Lorem ipsum is placeholder text commonly graphic</a></h2>
         <p>Distinctively impact standards compliant supply chains for installed base core competencies. Continually incubate top-line e-business and value-added ideas. Professionally empower progressive processes without cooperative methods of empowerment.</p>
         <div class="author-box d-flex">
          <img src="assets/img/author/author-1.jpg" alt="Author Image" />
@@ -370,7 +368,7 @@
         </div>
        </div>
        <div class="blog-content bg-smoke">
-        <h2 class="blog-title h4 font-theme"><a href="blog-details.jsp">From its medieval origins to the digital era about</a></h2>
+        <h2 class="blog-title h4 font-theme"><a href="blog-details.vue">From its medieval origins to the digital era about</a></h2>
         <p>Distinctively impact standards compliant supply chains for installed base core competencies. Continually incubate top-line e-business and value-added ideas. Professionally empower progressive processes without cooperative methods of empowerment.</p>
         <div class="author-box d-flex">
          <img src="assets/img/author/author-1.jpg" alt="Author Image" />
@@ -396,7 +394,7 @@
         </div>
        </div>
        <div class="blog-content bg-smoke">
-        <h2 class="blog-title h4 font-theme"><a href="blog-details.jsp">Latin derived from 1st-century BC text Finibus</a></h2>
+        <h2 class="blog-title h4 font-theme"><a href="blog-details.vue">Latin derived from 1st-century BC text Finibus</a></h2>
         <p>Distinctively impact standards compliant supply chains for installed base core competencies. Continually incubate top-line e-business and value-added ideas. Professionally empower progressive processes without cooperative methods of empowerment.</p>
         <div class="author-box d-flex">
          <img src="assets/img/author/author-1.jpg" alt="Author Image" />
@@ -437,10 +435,10 @@
          <div class="post-thumb-style1 vs-sidebox-v2 pb-1">
           <div class="vs-blog d-flex gap-3">
            <div class="media-img">
-            <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-1.png" alt="Recent Post" /></a>
+            <a href="blog-details.vue"><img src="assets/img/widget/recent-post-1-1.png" alt="Recent Post" /></a>
            </div>
            <div class="media-body align-self-center">
-            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.jsp">The General Sery vice Administr</a></h4>
+            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.vue">The General Sery vice Administr</a></h4>
             <div class="blog-meta link-inherit fs-xs mt-1">
              <a href="blog.jsp"><i class="fal fa-calendar-alt text-theme2"></i>June 21, 2021</a>
             </div>
@@ -448,10 +446,10 @@
           </div>
           <div class="vs-blog d-flex gap-3">
            <div class="media-img">
-            <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-2.png" alt="Recent Post" /></a>
+            <a href="blog-details.vue"><img src="assets/img/widget/recent-post-1-2.png" alt="Recent Post" /></a>
            </div>
            <div class="media-body align-self-center">
-            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.jsp">THE STRENGTH OF LOREM IPSUM</a></h4>
+            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.vue">THE STRENGTH OF LOREM IPSUM</a></h4>
             <div class="blog-meta link-inherit fs-xs mt-1">
              <a href="blog.jsp"><i class="fal fa-calendar-alt text-theme2"></i>June 21, 2021</a>
             </div>
@@ -459,10 +457,10 @@
           </div>
           <div class="vs-blog d-flex gap-3">
            <div class="media-img">
-            <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-3.png" alt="Recent Post" /></a>
+            <a href="blog-details.vue"><img src="assets/img/widget/recent-post-1-3.png" alt="Recent Post" /></a>
            </div>
            <div class="media-body align-self-center">
-            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.jsp">LOREM IPSUM IS SO UBIQU BECAUSE</a></h4>
+            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.vue">LOREM IPSUM IS SO UBIQU BECAUSE</a></h4>
             <div class="blog-meta link-inherit fs-xs mt-1">
              <a href="blog.jsp"><i class="fal fa-calendar-alt text-theme2"></i>June 21, 2021</a>
             </div>
@@ -470,10 +468,10 @@
           </div>
           <div class="vs-blog d-flex gap-3">
            <div class="media-img">
-            <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-4.png" alt="Recent Post" /></a>
+            <a href="blog-details.vue"><img src="assets/img/widget/recent-post-1-4.png" alt="Recent Post" /></a>
            </div>
            <div class="media-body align-self-center">
-            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.jsp">BUT DESPITE ZEALOUS CRIES THE DEMISE</a></h4>
+            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.vue">BUT DESPITE ZEALOUS CRIES THE DEMISE</a></h4>
             <div class="blog-meta link-inherit fs-xs mt-1">
              <a href="blog.jsp"><i class="fal fa-calendar-alt text-theme2"></i>June 21, 2021</a>
             </div>
@@ -485,10 +483,10 @@
          <div class="post-thumb-style1 vs-sidebox-v2 pb-1">
           <div class="vs-blog d-flex gap-3">
            <div class="media-img">
-            <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-5.png" alt="Recent Post" /></a>
+            <a href="blog-details.vue"><img src="assets/img/widget/recent-post-1-5.png" alt="Recent Post" /></a>
            </div>
            <div class="media-body align-self-center">
-            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.jsp">The General Sery vice Administr</a></h4>
+            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.vue">The General Sery vice Administr</a></h4>
             <div class="blog-meta link-inherit fs-xs mt-1">
              <a href="blog.jsp"><i class="fal fa-calendar-alt text-theme2"></i>June 21, 2021</a>
             </div>
@@ -496,10 +494,10 @@
           </div>
           <div class="vs-blog d-flex gap-3">
            <div class="media-img">
-            <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-6.png" alt="Recent Post" /></a>
+            <a href="blog-details.vue"><img src="assets/img/widget/recent-post-1-6.png" alt="Recent Post" /></a>
            </div>
            <div class="media-body align-self-center">
-            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.jsp">Lorem ipsum began as nonsensical</a></h4>
+            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.vue">Lorem ipsum began as nonsensical</a></h4>
             <div class="blog-meta link-inherit fs-xs mt-1">
              <a href="blog.jsp"><i class="fal fa-calendar-alt text-theme2"></i>June 21, 2021</a>
             </div>
@@ -507,10 +505,10 @@
           </div>
           <div class="vs-blog d-flex gap-3">
            <div class="media-img">
-            <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-7.png" alt="Recent Post" /></a>
+            <a href="blog-details.vue"><img src="assets/img/widget/recent-post-1-7.png" alt="Recent Post" /></a>
            </div>
            <div class="media-body align-self-center">
-            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.jsp">Finibus Bonorum et Malorum century</a></h4>
+            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.vue">Finibus Bonorum et Malorum century</a></h4>
             <div class="blog-meta link-inherit fs-xs mt-1">
              <a href="blog.jsp"><i class="fal fa-calendar-alt text-theme2"></i>June 21, 2021</a>
             </div>
@@ -518,10 +516,10 @@
           </div>
           <div class="vs-blog d-flex gap-3">
            <div class="media-img">
-            <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-8.png" alt="Recent Post" /></a>
+            <a href="blog-details.vue"><img src="assets/img/widget/recent-post-1-8.png" alt="Recent Post" /></a>
            </div>
            <div class="media-body align-self-center">
-            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.jsp">Until recently prev-ailing view assumed</a></h4>
+            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.vue">Until recently prev-ailing view assumed</a></h4>
             <div class="blog-meta link-inherit fs-xs mt-1">
              <a href="blog.jsp"><i class="fal fa-calendar-alt text-theme2"></i>June 21, 2021</a>
             </div>
@@ -533,10 +531,10 @@
          <div class="post-thumb-style1 vs-sidebox-v2 pb-1">
           <div class="vs-blog d-flex gap-3">
            <div class="media-img">
-            <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-9.png" alt="Recent Post" /></a>
+            <a href="blog-details.vue"><img src="assets/img/widget/recent-post-1-9.png" alt="Recent Post" /></a>
            </div>
            <div class="media-body align-self-center">
-            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.jsp">Richard McClintock, a Latin scholar</a></h4>
+            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.vue">Richard McClintock, a Latin scholar</a></h4>
             <div class="blog-meta link-inherit fs-xs mt-1">
              <a href="blog.jsp"><i class="fal fa-calendar-alt text-theme2"></i>June 21, 2021</a>
             </div>
@@ -544,10 +542,10 @@
           </div>
           <div class="vs-blog d-flex gap-3">
            <div class="media-img">
-            <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-10.png" alt="Recent Post" /></a>
+            <a href="blog-details.vue"><img src="assets/img/widget/recent-post-1-10.png" alt="Recent Post" /></a>
            </div>
            <div class="media-body align-self-center">
-            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.jsp">McClintock to a passage De Finibus</a></h4>
+            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.vue">McClintock to a passage De Finibus</a></h4>
             <div class="blog-meta link-inherit fs-xs mt-1">
              <a href="blog.jsp"><i class="fal fa-calendar-alt text-theme2"></i>June 21, 2021</a>
             </div>
@@ -555,10 +553,10 @@
           </div>
           <div class="vs-blog d-flex gap-3">
            <div class="media-img">
-            <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-11.png" alt="Recent Post" /></a>
+            <a href="blog-details.vue"><img src="assets/img/widget/recent-post-1-11.png" alt="Recent Post" /></a>
            </div>
            <div class="media-body align-self-center">
-            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.jsp">In particular, the garbled words</a></h4>
+            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.vue">In particular, the garbled words</a></h4>
             <div class="blog-meta link-inherit fs-xs mt-1">
              <a href="blog.jsp"><i class="fal fa-calendar-alt text-theme2"></i>June 21, 2021</a>
             </div>
@@ -566,10 +564,10 @@
           </div>
           <div class="vs-blog d-flex gap-3">
            <div class="media-img">
-            <a href="blog-details.jsp"><img src="assets/img/widget/recent-post-1-12.png" alt="Recent Post" /></a>
+            <a href="blog-details.vue"><img src="assets/img/widget/recent-post-1-12.png" alt="Recent Post" /></a>
            </div>
            <div class="media-body align-self-center">
-            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.jsp">McClintock's eye for detail certainly</a></h4>
+            <h4 class="h5 blog-title font-theme lh-base mb-0"><a href="blog-details.vue">McClintock's eye for detail certainly</a></h4>
             <div class="blog-meta link-inherit fs-xs mt-1">
              <a href="blog.jsp"><i class="fal fa-calendar-alt text-theme2"></i>June 21, 2021</a>
             </div>
