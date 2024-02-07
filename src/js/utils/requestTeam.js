@@ -7,6 +7,25 @@ const service = axios.create({
     timeout: 5000, // request timeout
 })
 
+// 请求拦截器
+service.interceptors.request.use(
+    config => {
+        // 在发送请求之前做些什么
+        const token = localStorage.getItem('token');
+        if (token) {
+            // 让每个请求携带自定义token
+            config.headers['token'] = `Bearer ${token}`;
+        }
+        return config;
+    },
+    error => {
+        // 处理请求错误
+        alert("没有token");
+        console.log(error); // for debug
+        return Promise.reject(error);
+    }
+);
+
 // request interceptor
 service.interceptors.request.use(
 

@@ -128,7 +128,7 @@ And if you do, a like/comment/pin would be much apprecieated :) -->
                   <div class="label-wrapper"><label class="label" for="user" id="user-label"><i class="uil uil-envelope-alt"></i>&nbsp; Verification code</label></div>
                   <i class="uil uil-check-circle validation-icon valid input-icon"></i>
                   <i class="uil uil-times-circle validation-icon invalid input-icon"></i>
-                  <input name="user" type="text" class="input" id="user" required>
+                  <input name="user" type="text" class="input" id="registryCaptcha" required>
                   <input  class="input" type="button" onclick="sendCaptcha()" value="SEND" id="sendButton">
                   <p id="countdown"></p>
                   <span class="border-corner-cover"></span>
@@ -198,15 +198,17 @@ And if you do, a like/comment/pin would be much apprecieated :) -->
 <!-- partial -->
     <script>
         function sendCaptcha(){
+            var user= document.getElementById('user').value;
             var captcha= document.getElementById('Captcha').value;
             console.log(captcha)
-            fetch('http://127.0.0.1:8127/user/saveCapthca', {
+            alert(user)
+            fetch('http://127.0.0.1:8127/user/sendCaptcha', {
                 method: 'POST', // 或者 'POST', 'PUT', 'DELETE' 等
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 // 如果需要发送数据，可以使用以下方式
-                body: JSON.stringify({ captcha: captcha })
+                body: JSON.stringify({ user: user })
             })
                 .then(response =>response.json().then((data)=>{
                     console.log(data)
@@ -218,16 +220,16 @@ And if you do, a like/comment/pin would be much apprecieated :) -->
         }
 
         function MyRegister(){
-            var captcha= document.getElementById('Captcha').value;
+            var captcha= document.getElementById('registryCaptcha').value;
             var user= document.getElementById('user').value;
             var password= document.getElementById('confirm-password').value;
-            fetch('http://127.0.0.1:8127/user/register', {
+            fetch('http://127.0.0.1:8127/user/registry', {
                 method: 'POST', // 或者 'POST', 'PUT', 'DELETE' 等
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 // 如果需要发送数据，可以使用以下方式
-                body: JSON.stringify({ username: user,password:password ,captcha:captcha})
+                body: JSON.stringify({ user: user,password: password ,captcha: captcha})
             })
                 .then(response =>response.json().then((data)=>{
 
@@ -247,7 +249,7 @@ And if you do, a like/comment/pin would be much apprecieated :) -->
            // Captcha//验证码
            // user//用户注册
            // confirm-password//注册密码
-           fetch('http://127.0.0.1:8127/user/login', {
+           fetch('http://127.0.0.1:8127/login', {
                method: 'POST', // 或者 'POST', 'PUT', 'DELETE' 等
                headers: {
                    'Content-Type': 'application/json'
@@ -256,6 +258,10 @@ And if you do, a like/comment/pin would be much apprecieated :) -->
                body: JSON.stringify({ username: loginUser,password:password })
            })
                .then(response =>response.json().then((data)=>{
+                   if (data.code=="200"){
+                       localStorage.setItem('token', data.data);//在localStorage中存入token
+                       window.location.href="/index.html"
+                   }
 
                    // 获取要插入新标签的位置
                    var tipDiv = document.querySelector('.tip');
