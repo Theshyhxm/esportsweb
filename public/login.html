@@ -4,7 +4,20 @@
   <meta charset="UTF-8">
   <title>Start Esports</title>
   <link rel="stylesheet" href="/css/login.css">
-
+<style>
+    #popup {
+        position: fixed; /* 将弹窗固定在页面上 */
+        top: 50%; /* 水平居中显示 */
+        left: 50%;
+        transform: translate(-50%, -50%); /* 垂直居中显示 */
+        width: 200px; /* 设置宽度 */
+        height: 60px; /* 设置高度 */
+        background-color: transparent; /* 设置背景色 */
+        //border: 1px solid #ccc; /* 添加边框 */
+        text-align: center;
+        color: #36d344;
+    }
+</style>
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -16,7 +29,9 @@ And if you do, a like/comment/pin would be much apprecieated :) -->
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"> <!-- stylesheet of all the used icons -->
 
 <div class="block-mobile-landscape">Please rotate your device</div> <!-- this div will be visible only when the user has a mobile in landscape mode as it is too small for the content -->
-  
+<div id="popup" style="display: none;">
+    <!-- 这里放入弹窗的内容 -->
+</div>
   <div class="slider" id="slider">
 
     <div class="container" id="container">
@@ -72,13 +87,23 @@ And if you do, a like/comment/pin would be much apprecieated :) -->
               <span class="border-corner-cover"></span>
             </div>
               <div class="info">
+                  <div class="label-wrapper"><label class="label" for="password"><i class="uil uil-lock-alt"></i>&nbsp;New  Password</label></div>
+                  <i class="uil uil-check-circle validation-icon valid input-icon password-icon"></i>
+                  <i class="uil uil-times-circle validation-icon invalid input-icon password-icon"></i>
+                  <input name="password" type="password" class="input password" id="newPassword" required>
+                  <span class="border-corner-cover"></span>
+                  <i class="uil uil-eye input-icon password-eye"><i class="uil uil-line-alt password-eye-line"></i><span data-tooltip = "show password"></span></i>
+              </div>
+              <div class="info">
                   <div class="label-wrapper"><label class="label" for="user"><i class="uil uil-mailbox"></i>&nbsp; Enter the Captcha</label></div>
                   <i class="uil uil-check-circle validation-icon valid input-icon"></i>
                   <i class="uil uil-times-circle validation-icon invalid input-icon"></i>
-                  <input name="Captcha" type="text" class="input" id="Captcha" required>
+                  <input name="Captcha" type="text" class="input" id="RecoverCaptcha" required>
                   <span class="border-corner-cover"></span>
               </div>
-            <button type="submit" class="button send-verification">Send Link</button>
+              <input  class="input" type="button" onclick="sendCaptcha(2)" value="SEND" id="sendButton">
+              <p id="countdown"></p>
+            <button type="submit" class="button send-verification" onclick="MyRecover()">Update</button>
             <div class="or">OR</div>
             <div class="new-account"><span id="new-account">Create New Account</span></div>
           </form>
@@ -129,7 +154,7 @@ And if you do, a like/comment/pin would be much apprecieated :) -->
                   <i class="uil uil-check-circle validation-icon valid input-icon"></i>
                   <i class="uil uil-times-circle validation-icon invalid input-icon"></i>
                   <input name="user" type="text" class="input" id="registryCaptcha" required>
-                  <input  class="input" type="button" onclick="sendCaptcha()" value="SEND" id="sendButton">
+                  <input  class="input" type="button" onclick="sendCaptcha(1)" value="SEND" id="sendButton">
                   <p id="countdown"></p>
                   <span class="border-corner-cover"></span>
               </div>
@@ -197,10 +222,15 @@ And if you do, a like/comment/pin would be much apprecieated :) -->
   </div>
 <!-- partial -->
     <script>
-        function sendCaptcha(){
-            var user= document.getElementById('user').value;
-            var captcha= document.getElementById('Captcha').value;
-            console.log(captcha)
+        //type 1:注册 2.找回
+        function sendCaptcha(type){
+            console.log(type)
+            if (type==1){
+                var user= document.getElementById('user').value;
+            }
+            if (type==2){
+                var user= document.getElementById('recoverUser').value;
+            }
             alert(user)
             fetch('http://127.0.0.1:8127/user/sendCaptcha', {
                 method: 'POST', // 或者 'POST', 'PUT', 'DELETE' 等
@@ -208,10 +238,11 @@ And if you do, a like/comment/pin would be much apprecieated :) -->
                     'Content-Type': 'application/json'
                 },
                 // 如果需要发送数据，可以使用以下方式
-                body: JSON.stringify({ user: user })
+                body: JSON.stringify({ user: user ,type:type})
             })
                 .then(response =>response.json().then((data)=>{
                     console.log(data)
+                    // openPopup("验证码发送成功");
                 }))
                 .catch((error) => {
                     console.error('Error:', error);
@@ -232,7 +263,10 @@ And if you do, a like/comment/pin would be much apprecieated :) -->
                 body: JSON.stringify({ user: user,password: password ,captcha: captcha})
             })
                 .then(response =>response.json().then((data)=>{
-
+                    if (data=="200"){
+                        // openPopup("注册成功");
+                        window.location.href="/login.html"
+                    }
                 }))
                 .catch((error) => {
                     console.error('Error:', error);
@@ -240,6 +274,32 @@ And if you do, a like/comment/pin would be much apprecieated :) -->
 
 
         }
+
+        function MyRecover(){
+            var captcha= document.getElementById('RecoverCaptcha').value;
+            var user= document.getElementById('recoverUser').value;
+            var password= document.getElementById('newPassword').value;
+            fetch('http://127.0.0.1:8127/user/recoverUser', {
+                method: 'POST', // 或者 'POST', 'PUT', 'DELETE' 等
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                // 如果需要发送数据，可以使用以下方式
+                body: JSON.stringify({ user: user,password: password ,captcha: captcha})
+            })
+                .then(response =>response.json().then((data)=>{
+                     if (data.code==200){
+                         // openPopup("重置密码成功");
+                         window.location.href="/login.html"
+                     }
+                }))
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+
+
+        }
+
 
         function mySubmit(){
 
@@ -283,6 +343,20 @@ And if you do, a like/comment/pin would be much apprecieated :) -->
            console.log(password)
             // window.location.href="/"
        }
+
+        // 获取弹窗元素
+        var popup = document.getElementById("popup");
+
+        // 打开弹窗函数
+        function openPopup(message) {
+            popup.style.display = "block"; // 显示弹窗
+            popup.innerHTML=message;
+        }
+
+        // 关闭弹窗函数
+        function closePopup() {
+            popup.style.display = "none"; // 隐藏弹窗
+        }
     </script>
 <script  src="js/login.js"></script>
 <script src="js/countdown.js"></script>

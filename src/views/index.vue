@@ -83,11 +83,11 @@
 <!--          <a href="javaScript:void(0)"><img src="${sessionScope.user.img}" alt="Zocker"/></a>-->
 <!--          <p class="text-light mt-3">Your Name:${sessionScope.user.username}</p>-->
           <ul class="social-links text-light">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="#"><i class="fab fa-behance"></i></a></li>
-            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fab fa-facebook-f">123</i></a></li>
+            <li><a href="#"><i class="fab fa-twitter">about-box</i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin-in">about-box</i></a></li>
+            <li><a href="#"><i class="fab fa-behance">about-box</i></a></li>
+            <li><a href="#"><i class="fab fa-youtube">about-box</i></a></li>
           </ul>
           <div class="my-40">
             <div class="info-style1">

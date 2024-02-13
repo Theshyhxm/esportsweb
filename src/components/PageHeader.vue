@@ -10,11 +10,12 @@
           </div>
           <div class="col-sm-6 text-end d-none d-md-block">
             <ul class="social-links fs-xs text-white">
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitch"></i></a></li>
-              <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-              <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+              <li><a href="#"><i  ><img style="width: 50px;height: 50px" src="@/assets/img/lolImg/TheShy.png" alt=""></i></a></li>
+              <li><a href="#"><i >{{user.username}}</i></a></li>
+              <li><a href="#"><i >CART</i></a></li>
+              <li><a href="#"><i >EXIT</i></a></li>
+<!--              <li><a href="#"><i class="fab fa-linkedin-in">{{user.username}}</i></a></li>-->
+<!--              <li><a href="#"><i class="fab fa-youtube">{{user.username}}</i></a></li>-->
             </ul>
           </div>
         </div>
@@ -135,7 +136,20 @@
   </header>
 </template>
 <script>
+import request from "@/js/utils/requestTeam";
+
 export default{
+  data() {
+    return {
+      user:""
+    }
+  },
+  created() {
+    this.getUser().then((resp)=>{
+      this.user=resp.data.data
+      console.log(this.user)
+    })
+  },
   methods:{
     goTeam (){
       //  路径/home对应我在router目录下index.js中定义的path属性值
@@ -145,6 +159,12 @@ export default{
       //  路径/home对应我在router目录下index.js中定义的path属性值
       this.$router.push('/player');
     },
+    getUser(){
+      return request({
+        url:`user/getUserDetailsByToken`,
+        method:'post'
+      })
+    }
   }
 }
 </script>

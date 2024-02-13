@@ -3,6 +3,7 @@ import Team from "@/views/team/team.vue";
 import TeamDetails from "@/views/team/team-details.vue";
 import player from "@/views/player/player.vue";
 import playerDetails from "@/views/player/player-details.vue";
+import login from "./"
 export  const routes=[
     // {
     //     path:'/login',
