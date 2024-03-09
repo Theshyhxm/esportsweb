@@ -1,0 +1,41 @@
+/* 模仿 Element Plus 的 message 组件样式 */
+.message-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    padding: 16px;
+    background-color: #f5f7fa;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+    color: #606266;
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* 添加过渡效果 */
+}
+
+.message-box.show {
+    opacity: 1;
+}
+
+/* 其他类型的消息样式 */
+.message-box.success {
+    background-color: #f0f9eb;
+    color: #52c41a;
+}
+
+.message-box.info {
+    background-color: #e0f7fa;
+    color: #00b4f4;
+}
+
+.message-box.warning {
+    background-color: #fef0f0;
+    color: #f56c6c;
+}
+
+.message-box.error {
+    background-color: #fef0f0;
+    color: #f56c6c;
+}

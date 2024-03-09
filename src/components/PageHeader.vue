@@ -11,7 +11,7 @@
           <div class="col-sm-6 text-end d-none d-md-block">
             <ul class="social-links fs-xs text-white">
               <li><a href="#"><i  ><img style="width: 50px;height: 50px" src="@/assets/img/lolImg/TheShy.png" alt=""></i></a></li>
-              <li><a href="#"><i >{{user.username}}</i></a></li>
+              <li><a href="#"><i >{{user.nickname}}</i></a></li>
               <li><a href="#"><i >CART</i></a></li>
               <li><a href="#"><i >EXIT</i></a></li>
 <!--              <li><a href="#"><i class="fab fa-linkedin-in">{{user.username}}</i></a></li>-->
@@ -164,7 +164,14 @@ export default{
         url:`user/getUserDetailsByToken`,
         method:'post'
       })
-    }
+    },
+   logout(uid){
+     window.location.href = '/login.html';
+     return request({
+       url:`user/logout/${uid}`,
+       method:'get'
+     })
+   }
   }
 }
 </script>

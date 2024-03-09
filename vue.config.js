@@ -4,6 +4,11 @@ module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave:false,
   devServer: {
+    //关闭web端显示错误
+    client: {
+      overlay: false
+    },
+
     proxy: {
       '/api': {
         target: 'http://localhost:8000', //建立本地服务器端口可能不一样
@@ -22,5 +27,5 @@ module.exports = defineConfig({
         jQuery: "jquery",
       })
     ]
-  }
+  },
 })

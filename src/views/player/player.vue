@@ -209,12 +209,15 @@
      <input type='hidden' id='endPage' value='${page.pages}'>
     </div>
     <div class="pagination-wrapper pagination-layout1 mt-lg-30 mb-30">
-     <ul>
-      <li><a href="javaScript:void(0)"><span class="text" onclick="find2(1)">首页</span></a></li>
-      <li><a href="javaScript:void(0)"><span class="text" onclick="find2($('#prepageNo').val())">上一页</span></a></li>
-      <li><a href="javaScript:void(0)"><span class="text" onclick="find2($('#nextPage').val())">下一页</span></a></li>
-      <li><a href="javaScript:void(0)"><span class="text" onclick="find2($('#endPage').val())">末页</span></a></li>
-     </ul>
+      <ul>
+        <li><a href="javaScript:void(0)"> <span  v-if="pageNo > 1" @click="pageNo--,pageClick()">上一页</span></a></li>
+        <li><a href="javaScript:void(0)"><span v-if="pageNo == 1">上一页</span></a></li>
+        <!--       <li><a href="javaScript:void(0)"><span v-for="index in pageAll" :key="index" :class="{'active':pageNo == index}" @click="goPage(index)">{{index}}</span></a></li>-->
+        <li><a href="javaScript:void(0)"><span v-if="pageNo!=pageAll"><b @click="pageNo++,pageClick()">下一页</b></span></a></li>
+        <li><a href="javaScript:void(0)"><span v-if="pageNo == pageAll">下一页</span></a></li>
+        <li><a href="javaScript:void(0)">共{{pageAll}}页</a></li>
+        <li>到<a href="javaScript:void(0)"><input type="text" class="int02" v-model="jumpPage"> 页<input type="button" class="bt03" value="确定" @click="goPage(jumpPage)"></a></li>
+      </ul>
     </div>
    </div>
   </section>

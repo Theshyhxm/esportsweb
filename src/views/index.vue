@@ -294,45 +294,65 @@
               </div>
             </div>
           </div>
-          <div class="mb-15 filter-active row">
-            <!--                <c:forEach items="${contestIems}" var="contestItem">-->
-            <!--                    <div class="col-md-6 col-lg-12 grid-item ${contestItem.contest.ciname}">-->
-            <!--                        <div class="vs-match">-->
-            <!--                            <div class="row align-items-center justify-content-center justify-content-lg-start">-->
-            <!--                                <div class="col-lg-3">-->
-            <!--                                    <div class="match-logo">-->
-            <!--                                        <a href="teamController/findTeamById?tid=${contestItem.team1.tid}"><img-->
-            <!--                                                src="${contestItem.team1.teamimg}" alt="Team Logo"/></a>-->
-            <!--                                        <span class="versus">vs</span>-->
-            <!--                                        <a href="teamController/findTeamById?tid=${contestItem.team2.tid}"><img-->
-            <!--                                                src="${contestItem.team2.teamimg}" alt="Team Logo"/></a>-->
-            <!--                                    </div>-->
-            <!--                                </div>-->
-            <!--                                <div class="col-lg">-->
-            <!--                                    <div class="match-about pl-35">-->
-            <!--                                        <h3 class="team-name h5 text-white mb-1 mb-lg-2"><a-->
-            <!--                                                href="teamController/findTeamById?tid=${contestItem.team1.tid}">${contestItem.team1.tname}</a>-->
-            <!--                                            <span class="text-theme">vs</span> <a-->
-            <!--                                                    href="teamController/findTeamById?tid=${contestItem.team2.tid}">${contestItem.team2.tname}</a>-->
-            <!--                                        </h3>-->
-            <!--                                        <p class="match-date mb-0">${contestItem.time}</p>-->
-            <!--                                    </div>-->
-            <!--                                </div>-->
-            <!--                                <div class="col-auto col-xl-2">-->
-            <!--                                    <div class="match-time text-white">-->
-            <!--                                        ${contestItem.tid1grade} : ${contestItem.tid2grade}-->
-            <!--                                    </div>-->
-            <!--                                </div>-->
-            <!--                                <div class="col-auto col-xl-2 text-end">-->
-            <!--                                    <a href="https://lpl.qq.com/es/live.shtml" class="icon-btn1 popup-video"><i-->
-            <!--                                            class="fab fa-twitch"></i></a>-->
-            <!--                                    <a href="https://lpl.qq.com/es/live.shtml" class="icon-btn1 popup-video"><i-->
-            <!--                                            class="fab fa-youtube"></i></a>-->
-            <!--                                </div>-->
-            <!--                            </div>-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                </c:forEach>-->
+          <div  v-for="(contestItem,index) in contestItems" class="mb-15 filter-active row">
+                                <div class="col-md-6 col-lg-12 grid-item ">
+                                    <div class="vs-match">
+                                        <div class="row align-items-center justify-content-center justify-content-lg-start">
+                                            <div class="col-lg-3">
+                                                <div class="match-logo">
+                                                    <a href="JavaScript:void(0) " onclick="showDetails(contestItem.blueTeam.tid)"><img src="{{contestItem.blueTeam.TeamTeamImg}}" alt="Team Logo"/></a>
+                                                    <span class="versus">vs</span>
+                                                    <a href="JavaScript:void(0)" onclick="showDetails(contestItem.redTeam.tid)"><img
+                                                            src="@/assets/img/lolImg/IG.png" style="height: 100%" alt="Team Logo"/></a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg">
+                                                <div class="match-about pl-35">
+                                                    <h3 class="team-name h5 text-white mb-1 mb-lg-2"><a
+                                                            href="JavaScript:void (0)" onclick="showDetails(contestItem.blueTeam.tid)">{{contestItem.blueTeam.tname}}</a>
+                                                        <span class="text-theme">&nbsp;&nbsp;vs&nbsp;&nbsp;</span>
+                                                      <a href="JavaScript:void (0)" onclick="showDetails(contestItem.redTeam.tid)">{{contestItem.redTeam.tname}}</a>
+                                                    </h3>
+                                                    <p class="match-date mb-0">{{contestItem.contestItemTime}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto col-xl-2"  >
+                                                <div class="match-time text-white">
+                                                    {{contestItem.blueTeamGrade}} : {{contestItem.redTeamGrade}}
+                                                </div>
+                                            </div>
+                                            <div class="col-auto col-xl-2 text-end" style="width: 100%">
+                                              <a href="JavaScript:void (0) "  v-if="videoState == false" @click="checkVideoFun(),loadVideos(contestItem.cid)" class="icon-btn1 popup-video" style="width: 50%;" ><i
+                                                  class="fab">Playback</i></a>
+                                              <div v-if="videoState == true">
+                                              <a href="JavaScript:void (0) "    @click="masksCloseFun" class="icon-btn1 popup-video" style="width: 50%;" ><i
+                                                  class="fab">Close</i></a>
+                                              <a href="JavaScript:void (0) "  v-if="video1src !=false " @click="play(video1src)" class="icon-btn1 popup-video" style="width: 10%;" ><i
+                                                  class="fab">1</i></a>
+                                              <a href="JavaScript:void (0) "  v-if="video1src !=false " @click="play(video2src)" class="icon-btn1 popup-video" style="width: 10%;" ><i
+                                                  class="fab">2</i></a>
+                                              <a href="JavaScript:void (0) "  v-if="video1src !=false " @click="play(video3src)" class="icon-btn1 popup-video" style="width: 10%;" ><i
+                                                  class="fab">3</i></a>
+                                              <a href="JavaScript:void (0) "  v-if="video1src !=false " @click="play(video4src)" class="icon-btn1 popup-video" style="width: 10%;" ><i
+                                                  class="fab">4</i></a>
+                                              <a href="JavaScript:void (0) "  v-if="video1src !=false " @click="play(video5src)" class="icon-btn1 popup-video" style="width: 10%;" ><i
+                                                  class="fab">5</i></a>
+                                              </div>
+                                              <!-- 外层的遮罩 v-if用来控制显示隐藏 点击事件用来关闭弹窗 -->
+                                              <div class="mask" v-if="videoState == true" @click="masksCloseFun"></div>
+                                              <!-- 弹窗 -->
+                                              <div class="videomasks" v-if="videoState == true">
+                                                <!-- 视频：h5的视频播放video -->
+                                                <video :src="videoSrc" controls="controls" autoplay width="100%" height="100%">
+                                                  您的浏览器不支持 video 标签。
+                                                </video>
+                                              </div>
+                                              <a href="https://lpl.qq.com/es/live.shtml" class="icon-btn1 popup-video" style="width: 50%"><i
+                                                  class="fab "></i>Forum</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
           </div>
         </div>
       </section>
@@ -475,10 +495,130 @@
 <script>
 import pageFooter from "@/components/PageFooter.vue";
 import pageHeader from "@/components/PageHeader.vue";
+import {getContestItems, getVideoByCiId} from "@/js/api/team/contest";
 export default {
-  components:{
-    pageFooter,
+  data() {
+    return {
+      contestItems: "",//所有比赛数据
+      pageSize:4, //每页个数，后台默认15
+      pageNo: 1,//当前页码，不传默认第一页
+      pageAll: "", //数据总页数
+      jumpPage: "",//跳转页码
+      videoSrc: "",
+      videoState: false,
+      video1src:false,
+      video2src:false,
+      video3src:false,
+      video4src:false,
+      video5src:false,
+    }
+  },
+  created() {
+    this.loadContestItems();
+  },
+  methods:{
+    loadContestItems(){
+      getContestItems(0,this.pageNo,this.pageSize)
+          .then((resp)=>{
+            this.contestItems=resp.data.data.data;
+            this.pageSize=resp.data.pageSize;
+            this.pageNo=resp.data.pageNo;
+            this.pageAll=resp.data.pageAll;
+            console.log(resp.data.data.data)
+          })
+    },
+    loadVideos(ciid){
+      getVideoByCiId(ciid).then((resp)=>{
+        for (let i = 0; i < resp.data.data.length; i++) {
+          if (resp.data.data[i].sort==1){
+            this.video1src=resp.data.data[i].url;
+          }
+          if (resp.data.data[i].sort==2){
+            this.video2src=resp.data.data[i].url;
+          }
+          if (resp.data.data[i].sort==3){
+            this.video3src=resp.data.data[i].url;
+          }
+          if (resp.data.data[i].sort==4){
+            this.video4src=resp.data.data[i].url;
+          }
+          if (resp.data.data[i].sort==5){
+            this.video5src=resp.data.data[i].url;
+          }
+        }
+        this.videoSrc=this.video1src;
+      })
+    },
+    pageClick(){
+      this.loadTeams(); //获取列表数据
+      window.scrollTo(0,500); //页面滚动到顶部
+    },
+    //点击页码或跳转指定页码
+    goPage(event){
+      if(event != this.pageNo && event != ""){
+        this.pageNo = event
+        this.loadTeams(); //获取列表数据
+        window.scrollTo(0,500); //页面滚动到顶部
+      }
+    },
+    showDetails(tid){
+      this.$router.push({path:'/teamDetails',query: {tid: tid}})
+    },
+    play(src) {
+      this.videoSrc=src;
+    },
+    //点击按钮出现弹窗播放视频
+    checkVideoFun() {
+      this.videoState = true;
+    },
+    masksCloseFun() {
+      this.videoState = false;
+    },
+  },
+  computed: {
+    pagesAll() {
+      // 开始数字
+      var leftNum = 1;
+      // 结束数字
+      var rightNum = this.pageAll;
+      // 存储页码数组
+      var pageArray = [];
+      // 显示页码的数量 最好是个单数
+      var showNum = 5;
+      // 因为是单数向上取整获取到中间的数字
+      var centerNum = Math.ceil(showNum / 2);
+      // 判断分析当总页数超过showNum展示页数时，需要判断分页情况
+      //1、在最左边第一个或者在centerNum的前面
+      //2、在中间
+      //3、最右边最后一个
+      if (this.pageAll >= showNum) {
+        // 中间centerNum时左右都加上（centerNum-1)
+        if (this.pageNo > centerNum && this.pageNo < this.pageAll - (centerNum - 1)) {
+          //一定要用Number格式化一下获取的数据,防止获取的是字符串而不是数字
+          leftNum = Number(this.pageNo) - (centerNum - 1)
+          rightNum = Number(this.pageNo) + (centerNum - 1)
+        } else {
+          //最左边或者在showNum的中间
+          if (this.pageNo <= centerNum) {
+            leftNum = 1
+            rightNum = showNum
+            // 最右边时结束是总条数，开始是showNum减去1
+          } else {
+            rightNum = this.pageAll
+            leftNum = this.pageAll - (showNum - 1)
+          }
+        }
+      }
+      while (leftNum <= rightNum) {
+        pageArray.push(leftNum)
+        leftNum++
+      }
+      return pageArray
+    }
+  },
+  components: {
     pageHeader,
+    pageFooter,
   }
 }
 </script>
